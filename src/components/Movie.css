@@ -1,0 +1,66 @@
+/* Movie.css */
+.movies .movie {
+  width: 45%;
+  background-color: white;
+  margin-bottom: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-weight: 300;
+  padding: 20px;
+  border-radius: 5px;
+  color: #adaeb9;
+  box-shadow:
+    0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  /* 2. 중요: 내부 요소가 박스 밖으로 나가도 보여지게 설정 */
+  overflow: visible;
+  /* 3. 내용이 적을 때 카드가 너무 얇아지는 것 방지 */
+  min-height: 200px;
+  margin-top: 30px;
+}
+
+.movie img {
+  position: relative;
+  top: -50px;
+  max-width: 150px;
+  width: 100%;
+  margin-right: 30px;
+  box-shadow:
+    0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.movie .movie__title {
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #2c2c2c;
+  line-height: 1.2;
+}
+
+.movie .movie__genres {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie__genres li {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.movie__summary {
+  color: #a2a2a2;
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 1090px) {
+  .movies .movie {
+    width: 100%;
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eff3f7;
+  /* height: 100%를 제거하여 컨텐츠 길이에 맞게 늘어나도록 합니다 */
+}
+
+html,
+body,
+#potato,
+.container {
+  /* height: 100% 대신 최소 높이를 설정하여 중앙 정렬을 유지합니다 */
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh; /* 로딩 창은 화면 전체를 차지하게 합니다 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movies {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px;
+  /* 1. 상단 포스터(top: -50px)가 잘리지 않도록 넉넉한 여백을 줍니다 */
+  padding-top: 100px;
+  width: 90%; /* 화면 활용도를 위해 가로폭을 조금 넓혔습니다 */
+}
+
+.movies .movie {
+  width: 45%;
+  background-color: white;
+  margin-bottom: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-weight: 300;
+  padding: 20px;
+  border-radius: 5px;
+  color: #adaeb9;
+  /* 2. 이미지가 박스 밖으로 튀어나와도 보이도록 설정합니다 */
+  overflow: visible;
+  box-shadow:
+    0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3),
+    0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.movie img {
+  position: relative;
+  top: -50px;
+  max-width: 120px;
+  width: 100%; /* 이미지가 비율에 맞게 조절되도록 합니다 */
+  margin-right: 30px;
+  border-radius: 5px; /* 모서리를 둥글게 하면 더 부드럽습니다 */
+  box-shadow:
+    0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+/* 제목이 너무 길어서 레이아웃이 깨지는 것을 방지합니다 */
+.movie .movie__data {
+  width: 100%;
+}
+
+.movie .movie__title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #2c2c2c;
+  font-weight: 300;
+}
+
+.movie .movie__year {
+  margin: 0;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.movie .movie__genres {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0px;
+  display: flex;
+  flex-wrap: wrap; /* 장르가 많을 때 줄바꿈을 허용합니다 */
+}
+
+.movie__genres li {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+/* 모바일 대응: 화면이 좁아지면 카드를 한 줄에 하나씩 배치합니다 */
+@media screen and (max-width: 1090px) {
+  .movies .movie {
+    width: 100%;
+  }
+}
