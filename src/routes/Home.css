@@ -70,6 +70,63 @@ body,
     0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
 
+.main-wrapper {
+  width: 100%;
+  max-width: 1200px; /* 영화 카드가 배치될 최대 너비 고정 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 모든 자식 요소를 세로축 중앙 정렬 */
+}
+
+/* 검색창 영역 */
+.search-area {
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* 검색창 디자인 보정 */
+.search-input {
+  width: 400px; /* 검색창을 조금 더 시원하게 키움 */
+  height: 45px;
+  border: 1px solid #dee2e6;
+  border-radius: 25px 0 0 25px; /* 둥근 디자인이 미니멀한 사이트에 잘 어울림 */
+  padding-left: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-btn {
+  width: 80px;
+  height: 45px;
+  border-radius: 0 25px 25px 0;
+  /* 나머지 기존 속성 유지 */
+}
+
+/* 영화 리스트 영역 */
+.movies {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  padding-top: 80px;
+  width: 100%; /* 래퍼 안에서 꽉 차게 */
+}
+
+/* 기존 스타일 유지하되 너비 조정 */
+.movies .movie {
+  width: 48%; /* 간격을 위해 살짝 줄임 */
+  /* 나머지 기존 속성 유지 */
+}
+
 /* 제목이 너무 길어서 레이아웃이 깨지는 것을 방지합니다 */
 .movie .movie__data {
   width: 100%;
@@ -100,6 +157,42 @@ body,
 .movie__genres li {
   margin-right: 10px;
   font-size: 14px;
+}
+
+/* 페이지네이션 영역 */
+.pagination-area {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 페이지네이션 버튼을 화면 중앙으로 */
+  padding-bottom: 50px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* 기존 margin-left: 380px; 는 삭제하세요 */
+}
+
+.page-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0046ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.page-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.page-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
 }
 
 /* 모바일 대응: 화면이 좁아지면 카드를 한 줄에 하나씩 배치합니다 */
